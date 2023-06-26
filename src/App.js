@@ -35,9 +35,9 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    const PAT = '97302d14698c435fa9e6e0cdf484252b';
-    const USER_ID = 'x88eu358xrhw';       
-    const APP_ID = '55c0d13af0c44ab2aa27fa2b39fa4add';
+    const PAT = process.env.PAT;
+    const USER_ID = process.env.USER_ID;       
+    const APP_ID = process.env.APP_ID;
     const MODEL_ID = 'food-item-recognition';   
     const IMAGE_URL = this.state.input;
 
