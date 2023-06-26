@@ -5,7 +5,7 @@ import Logo from './components/Logo/Logo';
 import ImageLink from './components/ImageLink/ImageLink';
 import './App.css';
 
-require('dotenv').config()
+/* require('dotenv').config() */
 
 const initialState = {
   input: '',
@@ -35,9 +35,9 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    const PAT = process.env.PAT;
-    const USER_ID = process.env.USER_ID;       
-    const APP_ID = process.env.APP_ID;
+    const PAT = '97302d14698c435fa9e6e0cdf484252b';
+    const USER_ID = 'x88eu358xrhw';       
+    const APP_ID = '55c0d13af0c44ab2aa27fa2b39fa4add';
     const MODEL_ID = 'food-item-recognition';   
     const IMAGE_URL = this.state.input;
 
@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   render() {
-    const { imageUrl, data } = this.state;
+    const { imageUrl, data, input } = this.state;
     return (
       <div className="App">
         <ParticlesBg type="particles" bg={true} />
@@ -82,6 +82,7 @@ class App extends Component {
           <ImageLink
             onInputChange={this.onInputChange}
             onButtonSubmit={this.onButtonSubmit}
+            input={input}
           />
           <FoodDetection data={data} imageUrl={imageUrl} />
         </div>

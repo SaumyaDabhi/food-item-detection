@@ -1,7 +1,7 @@
 import React from 'react';
 import './ImageLink.css';
 
-const ImageLink = ({ onInputChange, onButtonSubmit }) => {
+const ImageLink = ({ onInputChange, onButtonSubmit, input }) => {
   return (
     <div>
       <p className='f2 lh-title b'>
@@ -12,8 +12,15 @@ const ImageLink = ({ onInputChange, onButtonSubmit }) => {
           <input className='f4 pa2 w-70 center' type='tex' onChange={onInputChange}/>
           <button
             className='w-30 grow f4 link ph3 pv2 dib white bg-light-purple'
-            onClick={onButtonSubmit}
-          >Detect</button>
+            onClick={() => {
+              if(!input){
+                alert('Please enter image address');
+              }
+              onButtonSubmit();
+            }
+          }
+          >Detect
+          </button>
         </div>
       </div>
     </div>
