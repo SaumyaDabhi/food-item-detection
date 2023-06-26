@@ -5,6 +5,8 @@ import Logo from './components/Logo/Logo';
 import ImageLink from './components/ImageLink/ImageLink';
 import './App.css';
 
+require('dotenv').config()
+
 const initialState = {
   input: '',
   imageUrl: '',
