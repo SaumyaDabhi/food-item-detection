@@ -5,8 +5,6 @@ import Logo from './components/Logo/Logo';
 import ImageLink from './components/ImageLink/ImageLink';
 import './App.css';
 
-/* require('dotenv').config() */
-
 const initialState = {
   input: '',
   imageUrl: '',
@@ -35,9 +33,9 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    const PAT = process.env.PAT;
-    const USER_ID = process.env.USER_ID;       
-    const APP_ID = process.env.APP_ID;
+    const PAT = process.env.REACT_APP_PAT;
+    const USER_ID = process.env.REACT_APP_USER_ID;       
+    const APP_ID = process.env.REACT_APP_APP_ID;
     const MODEL_ID = 'food-item-recognition';   
     const IMAGE_URL = this.state.input;
 
